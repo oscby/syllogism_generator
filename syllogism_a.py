@@ -2,7 +2,6 @@ import os
 import random
 import sys
 import openpyxl
-from openpyxl.styles import Alignment
 
 path = ''
 subjekt = ['ateister', 'sossar']
@@ -13,12 +12,12 @@ objekt = ['pålästa', 'olyckliga', 'pengakåta', 'manipulativa', 'jättefab', '
 def modus(sub, verb, adj, obj):
     foo = random.randint(0,1)
     bar = random.randint(0,1)
-    if foo == 0: #TTT
+    if foo == 0:
         if bar == 1:
             syll = [f'om {sub} {verb} {adj}, \nså {verb} {sub} {obj}.\n{sub} {verb} {adj}, \nalltså {verb} {sub} {obj}.', 'TRUE', 'modus_ponens']
         else:
             syll = [f'om {sub} {verb} {adj}, \nså {verb} {sub} {obj}.\n{sub} {verb} {obj}, \nalltså {verb} {sub} {adj}.', 'FALSE', 'modus_ponens']
-    elif foo == 1: # TFF
+    elif foo == 1:
         if bar == 1:
             syll = [f'om {sub} {verb} {adj}, \nså {verb} {sub} {obj}.\n{sub} {verb} inte {obj}, \nalltså {verb} inte {sub} {adj}.', 'TRUE', 'modus_tollens']
         else:
