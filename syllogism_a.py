@@ -3,7 +3,11 @@ import random
 import sys
 import openpyxl
 
+# INPUT
 path = ''
+num_of_sylls = 100
+
+# modda nedan
 subjekt = ['ateister', 'sossar']
 verb = 'är'
 adjektiv = ['intelligenta', 'fula', 'giriga', 'luriga', 'söta', 'förtroendeingivande', 'seriösa', 'konspiratoriska']
@@ -36,7 +40,6 @@ def main():
         wb.save(path)
 
     ws = wb.active
-    num_of_sylls = 100
 
     ws.auto_filter.ref = f"A1:C{num_of_sylls+1}"
     ws.auto_filter.add_filter_column(1, ['TRUE', 'FALSE'])
